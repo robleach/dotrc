@@ -1,0 +1,2 @@
+# dotrc
+Shell run commands
