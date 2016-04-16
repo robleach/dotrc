@@ -1,0 +1,56 @@
+# .bashrc
+#
+# This file is sourced by all *interactive* bash shells on startup,
+# including some apparently interactive shells such as scp and rcp
+# that can't tolerate any output.  So make sure this doesn't display
+# anything or bad things will happen !
+
+# Test for an interactive shell.  There is no need to set anything
+# past this point for scp and rcp, and it's important to refrain from
+# outputting anything in those cases.
+if [[ $- != *i* ]] ; then
+        # Shell is non-interactive.  Be done now!
+        return
+fi
+
+df -P | awk '($5 ~ /^9[5-9]%/) || ($5 ~ /^100%/) {print $6, "is at", $5, "capacity"}'
+
+SCREENDIR=~/.screen
+#chmod g+r $(tty)
+
+# Put your stuff below here
+[[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+[[ -d ~/local/share/man ]] && export MANPATH=${MANPATH}:~/local/share/man
+[[ -d /opt/freeware/man ]] && export MANPATH=${MANPATH}:/opt/freeware/man
+
+PS1='\[\033[0;33m\]\u\[\033[01;34m\]@\[\033[01;35m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[0;36m\]\$\[\033[00m\] '
+
+# no duplicate lines in the history
+export HISTCONTROL=ignoredups
+
+SCALA_HOME=/opt/scala-2.7.1.final
+PKG_HOME=/opt/ccn/builds/pkgs
+JAVA_HOME=/usr/IBM/WebSphere7/AppServer/java
+WAS_HOME=/usr/IBM/WebSphere7/AppServer
+ANT_HOME=/usr/apache-ant-1.6.5
+export SCALA_HOME PKG_HOME JAVA_HOME WAS_HOME ANT_HOME
+
+# different pager
+#export PAGER=/usr/bin/most
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+#shopt -s checkwinsize
+
+TERM=pcansi
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+  PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+  ;;
+*)
+  ;;
+esac
+
+ulimit -d unlimited
