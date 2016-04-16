@@ -1,12 +1,9 @@
 # .bash_profile
 
-# Get the aliases and functions
 if [ -f ~/.bashrc ]; then
         . ~/.bashrc
 fi
 
-# User specific environment and startup programs
-
-PATH=$HOME/bin:/usr/java/latest/bin:${HOME}/local/apache-ant-1.9.6/bin:${HOME}/local/gradle-2.12/bin:$PATH
+PATH=$HOME/bin:/usr/java/current/bin:${HOME}/local/apache-ant-current/bin:${HOME}/local/gradle-current/bin:${HOME}/local/groovy-current/bin:$PATH
 
 export PATH
