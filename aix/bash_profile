@@ -2,6 +2,6 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-PATH=/usr/bin:/usr/sbin:/etc:/usr/ucb:/usr/apache-ant-1.6.5/bin:/usr/bin/X11:/sbin:/opt/rational/clearcase/bin:/opt/rational/common/bin:/usr/IBM/WebSphere/AppServer/java/bin:/opt/freeware/bin:.
+PATH=/usr/bin:/usr/sbin:/usr/ucb:/usr/apache-ant-1.9.6/bin:/usr/bin/X11:/sbin:/usr/java_1.7.2/bin:/opt/freeware/bin:.
 [[ -d ~/bin ]] && PATH=~/bin:/usr/local/bin:"${PATH}"
 export PATH
