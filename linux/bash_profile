@@ -1,7 +1,7 @@
 # .bash_profile
 
 if [ -f ~/.bashrc ]; then
-        . ~/.bashrc
+  . ~/.bashrc
 fi
 
 PATH=$HOME/bin:/usr/java/current/bin:${HOME}/local/apache-ant-current/bin:${HOME}/local/gradle-current/bin:${HOME}/local/groovy-current/bin:$PATH
