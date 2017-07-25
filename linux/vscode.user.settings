@@ -1,0 +1,25 @@
+{
+    "window.menuBarVisibility": "hidden",
+    "workbench.colorTheme": "Hopscotch (TextMate Theme)",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "none",
+    "workbench.editor.tabCloseButton": "off",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "explorer.enableDragAndDrop": false,
+    "extensions.ignoreRecommendations": true,
+    "vsicons.dontShowNewVersionMessage": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "git.enableSmartCommit": true,
+    "files.associations": {
+        "bash_profile": "shellscript",
+        "bashrc": "shellscript"
+    }
+}
