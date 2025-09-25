@@ -1,0 +1,43 @@
+#typeset -gU path
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+setopt autocd
+unsetopt beep
+bindkey -e
+zstyle :compinstall filename '/home/venkman/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+export EDITOR='vim'
+export PAGER='most'
+
+alias ls='lsd'
+alias ll='lsd -lA'
+alias l='lsd -l'
+alias cat="$HOME/.local/bin/bat --paging=never"
+alias ct="/usr/bin/cat"
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# append path+=('/pear/bin')
+# prepend path=('/pear/bin' $path)
+if [ -d $HOME/.local/bin ]; then
+  path=($HOME/.local/bin $path)
+fi
+if [ -d $HOME/bin ]; then
+  path=($HOME/bin $path)
+fi
+
+fpath+=($HOME/.zsh/pure)
+
+autoload -U promptinit; promptinit
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+
+eval "$(zoxide init zsh)"
+
+prompt pure
